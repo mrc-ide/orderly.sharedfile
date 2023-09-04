@@ -7,3 +7,4 @@ expand_dirs <- orderly2:::expand_dirs
 hash_file <- orderly2:::hash_file
 vcapply <- orderly2:::vcapply
 data_frame <- orderly2:::data_frame
+squote <- orderly2:::squote
