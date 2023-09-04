@@ -22,3 +22,6 @@ Suggests:
     testthat (>= 3.0.0),
     withr
 Config/testthat/edition: 3
+Remotes:
+    mrc-ide/orderly2,
+    ropensci/jsonvalidate
