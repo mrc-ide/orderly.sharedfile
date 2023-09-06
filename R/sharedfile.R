@@ -14,7 +14,7 @@
 ##'
 ##' @export
 sharedfile_path <- function(files, from = NULL) {
-  ctx <- orderly2::orderly_plugin_context("orderly.sharedfile")
+  ctx <- orderly2::orderly_plugin_context("orderly.sharedfile", parent.frame())
   folders <- names(ctx$config)
   if (is.null(from)) {
     if (length(folders) > 1) {
