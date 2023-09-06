@@ -28,7 +28,7 @@ sharedfile_path <- function(files, from = NULL) {
     from <- match_value(from, folders)
   }
   from_path <- ctx$config[[from]]$path
-  is_missing <- file_exists(files, workdir = from_path)
+  is_missing <- !file_exists(files, workdir = from_path)
   if (any(is_missing)) {
     cli::cli_abort(
       c("File in '{from}' does not exist: {squote(files[is_missing])}",
