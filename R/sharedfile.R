@@ -28,8 +28,12 @@ sharedfile_path <- function(files, from = NULL) {
     from <- match_value(from, folders)
   }
   from_path <- ctx$config[[from]]$path
-  assert_file_exists(files, workdir = from_path,
-                     name = sprintf("File in '%s'", from))
+  is_missing <- file_exists(files, from_path)
+  if (any(is_missing)) {
+    cli::cli_abort(
+      c("File in '{from}' does not exist: {squote(files[is_missing])}",
+        i = "Root for '{from}' is '{from_path}'"))
+  }
 
   hash_algorithm <- orderly2::orderly_config(ctx$root)$core$hash_algorithm
   path_expanded <- expand_dirs(files, from_path)
