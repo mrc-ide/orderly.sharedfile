@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/index.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mrc-ide.github.io/orderly.sharedfile/reference/sharedfile_path.html</loc>
   </url>
 </urlset>
