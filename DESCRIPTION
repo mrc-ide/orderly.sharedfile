@@ -9,9 +9,19 @@ Description: Access files in shared locations from orderly.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 URL: https://github.com/mrc-ide/orderly.sharedfile
 BugReports: https://github.com/mrc-ide/orderly.sharedfile/issues
+Imports:
+    cli,
+    fs,
+    jsonlite,
+    orderly2 (>= 1.99.3)
 Suggests:
-    testthat (>= 3.0.0)
+    jsonvalidate,
+    testthat (>= 3.0.0),
+    withr
 Config/testthat/edition: 3
+Remotes:
+    mrc-ide/orderly2,
+    ropensci/jsonvalidate
