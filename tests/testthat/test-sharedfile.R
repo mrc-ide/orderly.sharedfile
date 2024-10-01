@@ -68,7 +68,7 @@ test_that("match folder location if needed", {
   expect_error(
     suppressMessages(
       orderly2::orderly_run("example", root = root, echo = FALSE)),
-    "from must be one of 'shared1', 'shared2'")
+    "'from' must be one of 'shared1', 'shared2'")
 
   code <- c(
     'p <- orderly.sharedfile::sharedfile_path("mtcars.rds", "shared2")',
