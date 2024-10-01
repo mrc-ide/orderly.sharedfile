@@ -1,7 +1,5 @@
 ## just be lazy and haul things in from orderly2 for now:
-assert_named <- function(...) orderly2:::assert_named(...)
 check_fields <- function(...) orderly2:::check_fields(...)
-match_value <- function(...) orderly2:::match_value(...)
 file_exists <- function(...) orderly2:::file_exists(...)
 expand_dirs <- function(...) orderly2:::expand_dirs(...)
 hash_file <- function(...) orderly2:::hash_file(...)
