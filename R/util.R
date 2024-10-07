@@ -1,10 +1,8 @@
 ## just be lazy and haul things in from orderly2 for now:
-assert_named <- orderly2:::assert_named
-check_fields <- orderly2:::check_fields
-match_value <- orderly2:::match_value
-file_exists <- orderly2:::file_exists
-expand_dirs <- orderly2:::expand_dirs
-hash_file <- orderly2:::hash_file
-vcapply <- orderly2:::vcapply
-data_frame <- orderly2:::data_frame
-squote <- orderly2:::squote
+check_fields <- function(...) orderly2:::check_fields(...)
+file_exists <- function(...) orderly2:::file_exists(...)
+expand_dirs <- function(...) orderly2:::expand_dirs(...)
+hash_file <- function(...) orderly2:::hash_file(...)
+vcapply <- function(...) orderly2:::vcapply(...)
+data_frame <- function(...) orderly2:::data_frame(...)
+squote <- function(...) orderly2:::squote(...)
