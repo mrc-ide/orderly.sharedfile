@@ -14,7 +14,7 @@
 ##'
 ##' @export
 sharedfile_path <- function(files, from = NULL) {
-  ctx <- orderly2::orderly_plugin_context("orderly.sharedfile", parent.frame())
+  ctx <- orderly::orderly_plugin_context("orderly.sharedfile", parent.frame())
   folders <- names(ctx$config)
   if (is.null(from)) {
     if (length(folders) > 1) {
@@ -35,7 +35,7 @@ sharedfile_path <- function(files, from = NULL) {
         i = "Root for '{from}' is '{from_path}'"))
   }
 
-  hash_algorithm <- orderly2::orderly_config(ctx$root)$core$hash_algorithm
+  hash_algorithm <- orderly::orderly_config(ctx$root)$core$hash_algorithm
   path_expanded <- expand_dirs(files, from_path)
   hash <- withr::with_dir(
     from_path,
@@ -44,6 +44,6 @@ sharedfile_path <- function(files, from = NULL) {
                      path = path_expanded,
                      hash = unname(hash))
 
-  orderly2::orderly_plugin_add_metadata("orderly.sharedfile", "path", info)
+  orderly::orderly_plugin_add_metadata("orderly.sharedfile", "path", info)
   file.path(from_path, files)
 }

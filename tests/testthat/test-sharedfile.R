@@ -4,7 +4,7 @@ test_that("can copy files in from shared directory", {
   saveRDS(mtcars, file.path(shared, "mtcars.rds"))
   hash <- hash_file(file.path(shared, "mtcars.rds"), "sha256")
 
-  suppressMessages(orderly2::orderly_init(root))
+  suppressMessages(orderly::orderly_init(root))
   cfg <- c("minimum_orderly_version: 1.99.3",
            "plugins:",
            "  orderly.sharedfile:",
@@ -19,10 +19,10 @@ test_that("can copy files in from shared directory", {
     'saveRDS(readRDS(p), "result.rds")')
   writeLines(code, file.path(path_src, "example.R"))
   id <- suppressMessages(
-    orderly2::orderly_run("example", root = root, echo = FALSE))
+    orderly::orderly_run("example", root = root, echo = FALSE))
   expect_type(id, "character")
 
-  meta <- orderly2::orderly_metadata(id, root = root)
+  meta <- orderly::orderly_metadata(id, root = root)
   expect_length(meta$custom$orderly.sharedfile$path, 1)
   expect_equal(meta$custom$orderly.sharedfile$path[[1]],
                list(from = "incoming", path = "mtcars.rds", hash = hash))
@@ -37,7 +37,7 @@ test_that("match folder location if needed", {
   shared2 <- withr::local_tempdir()
   saveRDS(iris, file.path(shared2, "iris.rds"))
 
-  suppressMessages(orderly2::orderly_init(root))
+  suppressMessages(orderly::orderly_init(root))
   cfg <- c("minimum_orderly_version: 1.99.3",
            "plugins:",
            "  orderly.sharedfile:",
@@ -56,7 +56,7 @@ test_that("match folder location if needed", {
   writeLines(code, file.path(path_src, "example.R"))
   err <- expect_error(
     suppressMessages(
-      orderly2::orderly_run("example", root = root, echo = FALSE)),
+      orderly::orderly_run("example", root = root, echo = FALSE)),
     "'from' must be given as you have more than one folder configured")
   expect_equal(err$parent$body,
                c(i = "Possible values are: 'shared1' and 'shared2'"))
@@ -67,7 +67,7 @@ test_that("match folder location if needed", {
   writeLines(code, file.path(path_src, "example.R"))
   expect_error(
     suppressMessages(
-      orderly2::orderly_run("example", root = root, echo = FALSE)),
+      orderly::orderly_run("example", root = root, echo = FALSE)),
     "'from' must be one of 'shared1', 'shared2'")
 
   code <- c(
@@ -76,7 +76,7 @@ test_that("match folder location if needed", {
   writeLines(code, file.path(path_src, "example.R"))
   expect_error(
     suppressMessages(
-      orderly2::orderly_run("example", root = root, echo = FALSE)),
+      orderly::orderly_run("example", root = root, echo = FALSE)),
     "File in 'shared2' does not exist: 'mtcars.rds'")
 
   code <- c(
@@ -84,7 +84,7 @@ test_that("match folder location if needed", {
     'saveRDS(readRDS(p), "result.rds")')
   writeLines(code, file.path(path_src, "example.R"))
   id <- suppressMessages(
-      orderly2::orderly_run("example", root = root, echo = FALSE))
+      orderly::orderly_run("example", root = root, echo = FALSE))
   expect_type(id, "character")
 })
 
@@ -97,7 +97,7 @@ test_that("can hash a directory if requested", {
     writeLines(i, file.path(shared, "x/y/z", i))
   }
 
-  suppressMessages(orderly2::orderly_init(root))
+  suppressMessages(orderly::orderly_init(root))
   cfg <- c("minimum_orderly_version: 1.99.3",
            "plugins:",
            "  orderly.sharedfile:",
@@ -112,10 +112,10 @@ test_that("can hash a directory if requested", {
     'writeLines(readLines(file.path(p, "y/z/a")), "result.txt")')
   writeLines(code, file.path(path_src, "example.R"))
   id <- suppressMessages(
-    orderly2::orderly_run("example", root = root, echo = FALSE))
+    orderly::orderly_run("example", root = root, echo = FALSE))
   expect_type(id, "character")
 
-  meta <- orderly2::orderly_metadata(id, root = root)
+  meta <- orderly::orderly_metadata(id, root = root)
   expect_length(meta$custom$orderly.sharedfile$path, 3)
   expect_setequal(
     vcapply(meta$custom$orderly.sharedfile$path, "[[", "path"),
@@ -129,7 +129,7 @@ test_that("can use environment variables as paths", {
   saveRDS(mtcars, file.path(shared, "mtcars.rds"))
   hash <- hash_file(file.path(shared, "mtcars.rds"), "sha256")
 
-  suppressMessages(orderly2::orderly_init(root))
+  suppressMessages(orderly::orderly_init(root))
   cfg <- c("minimum_orderly_version: 1.99.3",
            "plugins:",
            "  orderly.sharedfile:",
@@ -146,10 +146,10 @@ test_that("can use environment variables as paths", {
     'saveRDS(readRDS(p), "result.rds")')
   writeLines(code, file.path(path_src, "example.R"))
   id <- suppressMessages(
-    orderly2::orderly_run("example", root = root, echo = FALSE))
+    orderly::orderly_run("example", root = root, echo = FALSE))
   expect_type(id, "character")
 
-  meta <- orderly2::orderly_metadata(id, root = root)
+  meta <- orderly::orderly_metadata(id, root = root)
   expect_length(meta$custom$orderly.sharedfile$path, 1)
   expect_equal(meta$custom$orderly.sharedfile$path[[1]],
                list(from = "incoming", path = "mtcars.rds", hash = hash))
@@ -163,7 +163,7 @@ test_that("can copy files in from shared directory", {
   saveRDS(mtcars, file.path(shared, "mtcars.rds"))
   hash <- hash_file(file.path(shared, "mtcars.rds"), "sha256")
 
-  suppressMessages(orderly2::orderly_init(root))
+  suppressMessages(orderly::orderly_init(root))
   cfg <- c("minimum_orderly_version: 1.99.3",
            "plugins:",
            "  orderly.sharedfile:",

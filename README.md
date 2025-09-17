@@ -3,16 +3,14 @@
 <!-- badges: start -->
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![R build status](https://github.com/mrc-ide/orderly.sharedfile/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/orderly.sharedfile/actions)
-[![codecov.io](https://codecov.io/github/mrc-ide/orderly.sharedfile/coverage.svg?branch=main)](https://codecov.io/github/mrc-ide/orderly.sharedfile?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/mrc-ide/orderly.sharedfile/graph/badge.svg)](https://app.codecov.io/gh/mrc-ide/orderly.sharedfile)
 <!-- badges: end -->
 
-This package contains a small plugin for using files from some shared location within [`orderly2`](https://mrc-ide.github.io/orderly2). Unlike [`orderly2::orderly_shared_resource`](https://mrc-ide.github.io/orderly2/reference/orderly_shared_resource.html), the assumption here is that the files are somewhere out of the source tree, for example a mounted shared drive that multiple people access.
+This package contains a small plugin for using files from some shared location within [`orderly`](https://mrc-ide.github.io/orderly). Unlike [`orderly::orderly_shared_resource`](https://mrc-ide.github.io/orderly/reference/orderly_shared_resource.html), the assumption here is that the files are somewhere out of the source tree, for example a mounted shared drive that multiple people access.
 
 We expect that the files are to be read into a running task/report are **read only** and are a source of information, not a destination to write things to.
 
 ## Configuration
-
-**This may change as and when we overhaul `orderly2`'s configuration; we would like to entirely remove the yaml, and are open to suggestions.**
 
 Edit your `orderly_config.yml` to add a section like
 
