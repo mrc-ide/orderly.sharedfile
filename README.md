@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](https://www.repostatus.org/badges/latest/concept.svg)](https://www.repostatus.org/#concept)
 [![R build status](https://github.com/mrc-ide/orderly.sharedfile/workflows/R-CMD-check/badge.svg)](https://github.com/mrc-ide/orderly.sharedfile/actions)
-[![codecov.io](https://codecov.io/github/mrc-ide/orderly.sharedfile/coverage.svg?branch=main)](https://codecov.io/github/mrc-ide/orderly.sharedfile?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/mrc-ide/orderly.sharedfile/graph/badge.svg)](https://app.codecov.io/gh/mrc-ide/orderly.sharedfile)
 <!-- badges: end -->
 
 This package contains a small plugin for using files from some shared location within [`orderly`](https://mrc-ide.github.io/orderly). Unlike [`orderly::orderly_shared_resource`](https://mrc-ide.github.io/orderly/reference/orderly_shared_resource.html), the assumption here is that the files are somewhere out of the source tree, for example a mounted shared drive that multiple people access.
