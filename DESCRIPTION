@@ -1,6 +1,6 @@
 Package: orderly.sharedfile
 Title: Package Title Here
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(person("Rich", "FitzJohn", role = c("aut", "cre"),
                     email = "rich.fitzjohn@gmail.com"),
              person("Imperial College of Science, Technology and Medicine",
@@ -16,12 +16,11 @@ Imports:
     cli,
     fs,
     jsonlite,
-    orderly2 (>= 1.99.3)
+    orderly (>= 1.99.85)
 Suggests:
     jsonvalidate,
     testthat (>= 3.0.0),
     withr
 Config/testthat/edition: 3
 Remotes:
-    mrc-ide/orderly2,
-    ropensci/jsonvalidate
+    mrc-ide/orderly
